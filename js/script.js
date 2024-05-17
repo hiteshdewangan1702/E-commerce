@@ -41,10 +41,12 @@ const display = (item) => {
         indiv.setAttribute("id", "indiv")
         // indiv.style.width = "60%"
         const title = document.createElement("h2")
-        title.setAttribute("id","protitle")
-        // title.textContent = x.title
-        // title.style.fontSize = "20px"
-        // title.style.fontWeight = "600"
+        title.setAttribute("id", "protitle")
+
+        const link = document.createElement("a")
+        link.href = `./product.html?pid=${x.id}`
+        link.append(title)
+
         let tit = x.title
         let titl = " "
         if (tit.length >= 26) {
@@ -71,7 +73,7 @@ const display = (item) => {
         }
         desc.textContent = abc + "...";
 
-        indiv.append(title, desc)
+        indiv.append(link, desc)
         const price = document.createElement("p")
         price.textContent = "Price $" + x.price
 
@@ -89,10 +91,76 @@ const display = (item) => {
         btn.setAttribute("id", "btn1")
         btn.textContent = "Add to cart"
 
+
         items.append(image, mdiv, btn)
 
         products.appendChild(items)
 
     });
 }
+
+const itemPage = (x) => {
+
+}
+
+
+
+
+
+
+
+
+// const mainDiv = document.getElementById('main')
+// let cart = [];
+
+// document.getElementById("count").textContent = cart.length
+// const fetchData = async () => {
+//     try {
+//         const res = await fetch("https://dummyjson.com/products");
+//         if (res.ok) {
+//             const data = await res.json()
+//             displayData(data.products)
+//         }
+//         else {
+//             console.log("error in fetching")
+//         }
+//     }
+//     catch (err) {
+//         console.log("erroer is" + err)
+//     }
+
+
+// }
+// fetchData();
+// const displayData = (arr) => {
+//     arr.forEach((p) => {
+//         const proDiv = document.createElement('div');
+//         proDiv.classList.add('product')
+//         const image = document.createElement('img');
+//         image.src = p.thumbnail;
+//         image.alt = p.title;
+//         const title = document.createElement('h2');
+//         title.textContent = p.title;
+
+//         const link = document.createElement('a');
+//         link.href = `./Pages/product.html?pid=${p.id}`
+//         link.target = "_blank"
+//         link.appendChild(title)
+
+//         const price = document.createElement('p');
+//         price.textContent = "$ " + p.price
+
+//         const addCart = document.createElement('button')
+//         addCart.textContent = "Add To Cart";
+//         addCart.addEventListener('click', () => cartLogic(p))
+//         proDiv.append(image, link, price, addCart);
+//         mainDiv.appendChild(proDiv)
+//     })
+// }
+// const cartLogic = (p) => {
+//     cart.push(p)
+//     localStorage.setItem('cart', JSON.stringify(cart));
+//     document.getElementById('count').textContent = cart.length
+
+// }
 
