@@ -11,10 +11,23 @@
 }
 
 .leftDiv {
-    margin-top: 50px;
-    display: flex;
+    /* border: 5px solid black; */
+    box-shadow: 1px 1px 10px 2px rgba(00, 00, 00, 0.2);
+    padding: 20px;
+    width: 60vw;
+    /* margin-top: 50px; */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    place-items: center;
+    /* display: flex; */
     /* flex-direction: row-reverse; */
-    height: 70vh;
+    /* height: 50vh; */
+}
+
+#mimg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover !important;
 }
 
 #nimg {
@@ -33,10 +46,117 @@
     height: 20% !important;
     width: 100%;
     column-gap: 20px;
-    border: 2px solid var(--mcolor);
+    /* border: 2px solid var(--mcolor); */
+    box-shadow: 1px 1px 10px 2px rgba(00, 00, 00, 0.2);
     transition: all 0.5s ease;
 }
 
 #nimg>img:hover {
     transform: scale(1.05);
+    box-shadow: 2px 2px 10px 2px rgba(255, 235, 59, 1);
+}
+
+#product {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#rightDiv {
+    margin-top: ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 0px 50px;
+}
+
+/* #rightDiv>a {
+    font-size: 80px;
+} */
+a>h2 {
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#btn2 {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 20%;
+    box-shadow: 1px 1px 10px 2px rgba(00, 00, 00, 0.2);
+    border: none;
+    background-color: white;
+    transition: all 0.5s ease;
+}
+
+#btn2:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 10px 2px rgba(255, 235, 59, 1);
+}
+
+
+@media (max-width: 576px) {
+    #product {
+        height: 60vh;
+        width: 100vh;
+        display: grid;
+        grid-template-columns: auto;
+        /* column-gap: 0px !important; */
+        /* place-items: center; */
+    }
+
+    .leftDiv {
+        /* overflow: hidden; */
+        height: 300px;
+        margin: 0px 22px;
+        /* display: grid;
+        grid-template-columns: auto; */
+        display: flex;
+        flex-direction: column-reverse;
+        width: 90vw;
+    }
+
+    #mimg {
+        margin-top: -20px !important;
+        object-fit: cover;
+        /* height: 90vh; */
+        width: 90vw !important;
+        object-fit: cover !important;
+    }
+
+    #nimg {
+        margin-top: 20px;
+        width: 90vw;
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    #nimg>img {
+        height: 40px !important;
+    }
+
+    .left #mimg {
+        height: 100%;
+        width: 100%;
+        object-fit: cover !important;
+    }
+
+    #rightDiv {
+        width: 90vw;
+        margin: 0px 22px;
+    }
+
+    #btn2 {
+        width: 30%;
+        padding: 10px 15px;
+    }
+
 }
