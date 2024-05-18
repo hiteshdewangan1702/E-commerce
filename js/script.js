@@ -43,9 +43,13 @@ const display = (item) => {
         const title = document.createElement("h2")
         title.setAttribute("id", "protitle")
 
+
         const link = document.createElement("a")
         link.href = `./product.html?pid=${x.id}`
         link.append(title)
+        link.style.textDecoration = "none"
+        link.style.color = "black"
+
 
         let tit = x.title
         let titl = " "
@@ -80,6 +84,12 @@ const display = (item) => {
         const rating = document.createElement("p")
         rating.textContent = "Rating " + x.rating
 
+        if (x.rating > 4.5) {
+            rating.style.color = "green"
+        }
+        else {
+            rating.style.color = "red"
+        }
         const indiv2 = document.createElement("div")
         indiv2.setAttribute("id", "price")
         // indiv.style.display = "flex"

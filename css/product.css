@@ -27,7 +27,8 @@
 #mimg {
     height: 100%;
     width: 100%;
-    object-fit: cover !important;
+    /* object-fit: cover !important; */
+    object-fit: contain !important;
 }
 
 #nimg {

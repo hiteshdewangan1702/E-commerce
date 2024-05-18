@@ -22,7 +22,6 @@ const displayData = (data) => {
     console.log(data.thumbnail)
     const leftDiv = document.createElement('div')
     leftDiv.classList.add("leftDiv")
-    // leftDiv.style.display = "flex";
     const image = document.createElement('img')
     image.setAttribute("id", "mimg")
     image.style.height = "313px"
@@ -50,12 +49,6 @@ const displayData = (data) => {
     rightDiv.setAttribute("id", "rightDiv")
     const title = document.createElement("h2")
     title.textContent = data.title
-    const link = document.createElement("a")
-    link.href = `./product.html?pid=${data.id}`
-    link.target = "_blank"
-    link.style.textDecoration = "none";
-    link.appendChild(title)
-
     const desc = document.createElement("p")
     desc.textContent = data.description;
 
@@ -68,6 +61,9 @@ const displayData = (data) => {
     if (data.rating > 4.5) {
         rating.style.color = "green"
     }
+    else {
+        rating.style.color = "red"
+    }
 
 
     const price = document.createElement("p")
@@ -79,7 +75,7 @@ const displayData = (data) => {
     const addCart = document.createElement("button")
     addCart.setAttribute("id", "btn2")
     addCart.textContent = "Add To Cart"
-    rightDiv.append(link, desc, rating, price, addCart)
+    rightDiv.append(title, desc, rating, price, addCart)
     product.append(leftDiv, rightDiv)
 }
 
